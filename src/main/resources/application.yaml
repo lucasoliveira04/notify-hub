@@ -1,3 +1,12 @@
 spring:
   application:
     name: api_notify_social
+  datasource:
+    url: jdbc:postgresql://localhost:5432/notify_social
+    username: notify_social
+    password: notify_social
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false

@@ -1,6 +1,7 @@
 package com.notify.social.controller;
 
 import com.notify.social.domain.dto.ApiHealthResponse;
+import com.notify.social.openapi.ApiOpenApi;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class ApiController {
+public class ApiController implements ApiOpenApi {
 
     @GetMapping("/health")
     public ResponseEntity<ApiHealthResponse> healthCheck() {
