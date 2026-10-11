@@ -43,22 +43,6 @@ services:
     volumes:
       - kafka-data:/var/lib/kafka/data
 
-  kafka-init:
-    image: apache/kafka:4.0.1
-    depends_on:
-      kafka:
-        condition: service_healthy
-    entrypoint: ["/bin/bash", "-c"]
-    command:
-      - |
-        /opt/kafka/bin/kafka-topics.sh \
-          --bootstrap-server kafka:9092 \
-          --create \
-          --if-not-exists \
-          --topic social-notification-topic \
-          --partitions 3 \
-          --replication-factor 1
-
 volumes:
   kafka-data:
   postgres-data:
